@@ -1,11 +1,17 @@
-import { Request, Response } from 'express';
+
 import { prismaClient } from '../../database/prismaClient';
 
 export class CreateParkingController {
-  async handle(req: Request, res: Response) {
-    const { image_url, mail, phone, name, parking_spaces, first_price, price,latitude, longitude } = req.body;
+  async handle(req:any, res:any) {
+    try{
+      const {manager_id , image_url, phone ,name, parking_spaces, first_price, price ,latitude, longitude} = req.body;
 
-    const parking = await prismaClient.parking.create({data: {image_url, mail, phone, name, parking_spaces, first_price, price,latitude, longitude, }});
+    const parking = await prismaClient.parking.create({data:  req.body});
     return res.json(parking)
+    }catch{
+      return res.json({
+        data: "Error"
+      })
+    } 
   }
 }
