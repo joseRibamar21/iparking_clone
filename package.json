@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --transpile-only ./src/server.ts",
-    "build": "tsc --output public",
+    "build": "tsc",
     "start": "node build/src/server.js"
   },
   "dependencies": {
