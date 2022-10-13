@@ -10,6 +10,7 @@ import { RelatorioTicketController } from "./controllers/Relatorios/RelatorioTic
 import { CloseTicketController } from "./controllers/Ticket/CloseTicketController";
 import { CreateTicketController } from "./controllers/Ticket/CreateTicketController";
 import { DeleteTicketController } from "./controllers/Ticket/DeleteTicketController";
+import { GetAllTicketParkingController } from "./controllers/Ticket/GetAllTicketParkingController";
 import { GetOneTicketController } from "./controllers/Ticket/GetOneTicketController";
 import { GetTicketController } from "./controllers/Ticket/GetTicketController";
 import { CreateUserController } from "./controllers/User/CreateUserController";
@@ -29,6 +30,7 @@ routes.get("/ticket", new GetTicketController().handle);
 routes.get("/ticket/:id", new GetOneTicketController().handle);
 routes.delete("/ticket/:id", new DeleteTicketController().handle);
 routes.put("/ticket/:id", new CloseTicketController().handle);
+routes.get("/ticket/parking/:id", new GetAllTicketParkingController().handle);
 
 
 routes.post("/users", new CreateUserController().handle)
