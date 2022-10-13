@@ -5,7 +5,9 @@ const routes = Router()
 import {CreateParkingController} from "./controllers/Parking/CreateParkingController";
 import { DeleteParkingController } from "./controllers/Parking/DeleteParkingController";
 import { GetParkingController } from "./controllers/Parking/GetParkingController";
+import { GetParkingEspecificoController } from "./controllers/Parking/GetParkingEspecificoController";
 import { UpdateParkingController } from "./controllers/Parking/UpdateParkingController";
+import { UpdateVagasParkingController } from "./controllers/Parking/UpdateVagasParkingController";
 import { RelatorioTicketController } from "./controllers/Relatorios/RelatorioTicketController";
 import { CloseTicketController } from "./controllers/Ticket/CloseTicketController";
 import { CreateTicketController } from "./controllers/Ticket/CreateTicketController";
@@ -22,8 +24,10 @@ routes.get("/",(req: Request, res: Response) => {
 
 routes.post("/parking", new CreateParkingController().handle);
 routes.get("/parking", new GetParkingController().handle);
+routes.get("/parking/:id", new GetParkingEspecificoController().handle);
 routes.delete("/parking/:id", new DeleteParkingController().handle);
 routes.put("/parking/:id", new UpdateParkingController().handle);
+routes.post("/parking/vagas/:id", new UpdateVagasParkingController().handle);
 
 routes.post("/ticket", new CreateTicketController().handle);
 routes.get("/ticket", new GetTicketController().handle);
