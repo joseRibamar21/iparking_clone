@@ -31,7 +31,7 @@ routes.put("/ticket/:id", new CloseTicketController().handle);
 
 
 routes.post("/users", new CreateUserController().handle)
-routes.get("/users", new GetOneUserController().handle)
+routes.get("/users/:id", new GetOneUserController().handle)
 
     
 export  {routes};
