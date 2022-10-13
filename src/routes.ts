@@ -6,6 +6,7 @@ import {CreateParkingController} from "./controllers/Parking/CreateParkingContro
 import { DeleteParkingController } from "./controllers/Parking/DeleteParkingController";
 import { GetParkingController } from "./controllers/Parking/GetParkingController";
 import { UpdateParkingController } from "./controllers/Parking/UpdateParkingController";
+import { RelatorioTicketController } from "./controllers/Relatorios/RelatorioTicketController";
 import { CloseTicketController } from "./controllers/Ticket/CloseTicketController";
 import { CreateTicketController } from "./controllers/Ticket/CreateTicketController";
 import { DeleteTicketController } from "./controllers/Ticket/DeleteTicketController";
@@ -33,5 +34,6 @@ routes.put("/ticket/:id", new CloseTicketController().handle);
 routes.post("/users", new CreateUserController().handle)
 routes.get("/users/:id", new GetOneUserController().handle)
 
+routes.get("/relatorios/ticket/:id", new RelatorioTicketController().handle)
     
 export  {routes};
