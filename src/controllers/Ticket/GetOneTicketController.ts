@@ -1,11 +1,11 @@
 import { prismaClient } from '../../database/prismaClient';
 import { Request, Response } from "express";
-export class DeleteTicketController {
+export class GetOneTicketController {
     async handle(req: Request, res: Response) {
         const { id } = req.params;
-        const deletedTicket = await prismaClient.ticket.delete({
+        const oneTicket = await prismaClient.ticket.findFirst({
             where: { id }
         });
-        return res.json(deletedTicket);
+        return res.json(oneTicket);
     }
 }
